@@ -18,10 +18,6 @@ src/
  |   |-- contato/
  |   |   |-- Contato.vue
  |   |
- |   |-- commom/
- |   |   |-- Nav.vue
- |   |   |-- Footer.vue
- |   |
  |   |-- home/
  |   |   |-- HomeAdmin.vue (home com os botoes de alterações do admin, irá importar alguns componentes)
  |   |   |-- HomeUser.vue (home apenas visualição, irá importar alguns componentes)
@@ -54,6 +50,11 @@ src/
  |   |   
  |   |-- configuracoes/
  |   |   |-- Configuracoes.vue
- |   |   
+ |   |
+ |   |-- commom/
+ |   |   |-- Nav.vue
+ |   |   |-- Footer.vue
+ |   |   |-- SideBar.vue
+ |   |   |-- ChangeButton.vue
 
 ```
