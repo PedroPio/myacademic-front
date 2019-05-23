@@ -1,13 +1,13 @@
 <template>
   <div>
-    <vs-navbar v-model="activeItem" class="nabarx">
+    <div class="navbar">
+        <SideBar/>
         <div slot="title">
-            <SideBar/>
             <vs-navbar-title>
-                My Academic
+                <span>My Academic Logo</span>
             </vs-navbar-title>
         </div>
-    </vs-navbar>
+    </div>
   </div>
 </template>
 
@@ -24,3 +24,12 @@ import SideBar from './SideBar.vue'
         })
     }
 </script>
+
+<style>
+    .navbar {
+        background-color: #646464;
+    }
+    .navbar button {
+        background-color: #F6F6F6;
+    }
+</style>
