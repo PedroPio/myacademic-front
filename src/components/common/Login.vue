@@ -11,7 +11,7 @@
     
     <span>Ou</span>
     <hr>
-    <vs-button color="purple" type="filled">Acessar como visitante</vs-button>
+    <vs-button @click="visitante" color="purple" type="filled">Acessar como visitante</vs-button>
 
   </div>
 </template>
@@ -28,6 +28,10 @@ export default {
    methods: {
        login() {
            this.$router.push({ path: 'home' })
+       },
+
+       visitante() {
+         this.$router.push({path: 'home'})
        }
    }
 };

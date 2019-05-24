@@ -42,7 +42,9 @@
           <div class="footer-sidebar" slot="footer">
               <vs-row>
                   <vs-col vs-offset="4" v-tooltip="'col - 4'" vs-type="flex" vs-justify="center" vs-align="center" vs-w="4">
-                    <img src="../../../docs/assets/logo.jpeg"/>
+                    <router-link class="nav-link" to="/home">
+                      <img src="../../../docs/assets/logo.jpeg"/>
+                    </router-link>
                   </vs-col>
               </vs-row>
           </div>
