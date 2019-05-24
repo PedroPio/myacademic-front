@@ -7,10 +7,13 @@ import 'vuesax/dist/vuesax.css' //Vuesax styles
 import 'material-icons/iconfont/material-icons.css'
 import App from './App.vue'
 
+import router from './router'
+
 Vue.use(Vuesax)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')

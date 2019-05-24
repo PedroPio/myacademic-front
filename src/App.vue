@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <NavBar/>
+    <!-- <NavBar/> -->
+    <!-- <Login /> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import NavBar from './components/common/NavBar.vue'
+import Login from './components/common/Login.vue'
 
 export default {
   name: 'app',
   components: {
-    NavBar,
+    // NavBar,
+    // Login
   }
 }
 </script>
