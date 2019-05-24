@@ -1,6 +1,7 @@
 <template>
     <div>
         <NavBar />
+        <SubMenu />
         <b-container class="pt-3">
             <b-row>
                 <b-col>
@@ -36,6 +37,7 @@
 
 <script>
 import NavBar from './NavBar.vue'
+import SubMenu from './SubMenu.vue'
 import DisciplinasList from '../disciplinas/DisciplinasList.vue'
 import ProjetosList from '../projetos/ProjetosList.vue'
 import PublicacoesList from '../publicacoes/PublicacoesList.vue'
@@ -44,9 +46,10 @@ import PublicacoesList from '../publicacoes/PublicacoesList.vue'
 
         components: {
             NavBar,
+            SubMenu,
             DisciplinasList,
             ProjetosList,
-            PublicacoesList
+            PublicacoesList,
         },
         data:()=>({
             activeItem: 0

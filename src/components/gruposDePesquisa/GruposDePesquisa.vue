@@ -1,6 +1,7 @@
 <template>
     <div>
         <NavBar />
+        <SubMenu />
         <vs-row>
             <vs-col vs-offset="2" v-tooltip="'col - 8'" vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
                 <div class="container text-left mt-4 mb-2">
@@ -19,12 +20,14 @@
 <script>
 import NavBar from '../common/NavBar.vue'
 import GruposDePesquisaList from './GruposDePesquisaList.vue'
+import SubMenu from '../common/SubMenu.vue'
     export default {
         name: 'GruposDePesquisa',
 
         components: {
             NavBar,
-            GruposDePesquisaList
+            GruposDePesquisaList,
+            SubMenu,
         },
     }
 </script>
