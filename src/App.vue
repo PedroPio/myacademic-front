@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <NavBar/> -->
-    <!-- <Login /> -->
     <router-view></router-view>
   </div>
 </template>
@@ -13,8 +11,7 @@ import Login from './components/common/Login.vue'
 export default {
   name: 'app',
   components: {
-    // NavBar,
-    // Login
+
   }
 }
 </script>

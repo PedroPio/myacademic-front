@@ -20,22 +20,22 @@
           </div>
           <div class="sidebar-body">
               <vs-sidebar-item index="1" icon="person">
-                Alunos
+                <router-link class="nav-link" to="/alunos">Alunos</router-link>
               </vs-sidebar-item>
 
               <vs-sidebar-item index="2" icon="book">
-                Disciplinas
+                <router-link class="nav-link" to="/disciplinas">Disciplinas</router-link>
               </vs-sidebar-item>
 
               <vs-sidebar-item index="3" icon="group">
-                Grupo de Pesquisa
+                <router-link class="nav-link" to="/grupo-pesquisa">Grupo de Pesquisa</router-link>
               </vs-sidebar-item>
 
               <vs-sidebar-item index="4" icon="work">
-                Projetos
+                <router-link class="nav-link" to="/projetos">Projetos</router-link>
               </vs-sidebar-item>
               <vs-sidebar-item index="5" icon="unarchive">
-                Publicações
+                <router-link class="nav-link" to="/publicacoes">Publicações</router-link>
               </vs-sidebar-item>
           </div>
 
