@@ -4,7 +4,9 @@
         <SideBar/>
         <div slot="title">
             <vs-navbar-title>
-                <router-link class="nav-link" to="/home">My Academic Logo</router-link>
+                <router-link class="nav-link" to="/home">
+                    My Academic Logo
+                </router-link>
             </vs-navbar-title>
         </div>
     </div>
