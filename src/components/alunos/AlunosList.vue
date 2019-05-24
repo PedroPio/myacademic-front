@@ -1,16 +1,16 @@
 <template>
     <div>
         <vs-list>
-            <vs-list-item title="Projeto 1">
+            <vs-list-item title="Aluno 1">
               <vs-button color="primary">Ação</vs-button>
             </vs-list-item>
-            <vs-list-item title="Projeto 2">
+            <vs-list-item title="Aluno 2">
               <vs-button color="primary">Ação</vs-button>
             </vs-list-item>
-            <vs-list-item title="Projeto 3">
+            <vs-list-item title="Aluno 3">
               <vs-button color="primary">Ação</vs-button>
             </vs-list-item>
-            <vs-list-item title="Projeto 4">
+            <vs-list-item title="Aluno 4">
               <vs-button color="primary">Ação</vs-button>
             </vs-list-item>
         </vs-list>
@@ -19,7 +19,7 @@
 
 <script>
     export default {
-        name: 'ProjetosList',
+        name: 'AlunosList',
 
         components: {
         },

@@ -28,7 +28,7 @@
               </vs-sidebar-item>
 
               <vs-sidebar-item index="3" icon="group">
-                <router-link class="nav-link" to="/grupo-pesquisa">Grupo de Pesquisa</router-link>
+                <router-link class="nav-link" to="/grupos-de-pesquisa">Grupo de Pesquisa</router-link>
               </vs-sidebar-item>
 
               <vs-sidebar-item index="4" icon="work">

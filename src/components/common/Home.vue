@@ -4,25 +4,31 @@
         <b-container class="pt-3">
             <b-row>
                 <b-col>
-                    <b-row>
-                          <b-col>
-                              <h2>Ultimas Disciplinas</h2>
-                              <DisciplinasList />
-                          </b-col>
-                    </b-row>
+                    <vs-card>
+                        <b-row>
+                              <b-col>
+                                  <h2>Ultimas Disciplinas</h2>
+                                  <DisciplinasList />
+                              </b-col>
+                        </b-row>
+                    </vs-card>
 
-                    <b-row class="pt-3">
-                        <b-col>
-                            <h2>Ultimas Publicações</h2>
-                            <PublicacoesList />
-                        </b-col>
-                    </b-row>
+                    <vs-card>
+                        <b-row class="pt-3">
+                            <b-col>
+                                <h2>Ultimas Publicações</h2>
+                                <PublicacoesList />
+                            </b-col>
+                        </b-row>
+                    </vs-card>
                 </b-col>
 
-                <b-col>
-                    <h2>Ultimos Projetos</h2>
-                    <ProjetosList />
-                </b-col>
+                <vs-card>
+                    <b-col>
+                        <h2>Ultimos Projetos</h2>
+                        <ProjetosList />
+                    </b-col>
+                </vs-card>
             </b-row>
         </b-container>
     </div>
