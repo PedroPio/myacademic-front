@@ -12,7 +12,6 @@
     <span>Ou</span>
     <hr>
     <vs-button @click="visitante" color="purple" type="filled">Acessar como visitante</vs-button>
-
   </div>
 </template>
 
@@ -28,6 +27,9 @@ export default {
    methods: {
        login() {
            this.$router.push({ path: 'home' })
+           // faz o isLogged ir para True executando a action Login
+           // se o usuario recarregar a pagina com Enter ou Ctrl F5, os valores da store se perdem
+           this.$store.dispatch('login')
        },
 
        visitante() {
