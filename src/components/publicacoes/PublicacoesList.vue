@@ -28,7 +28,10 @@
 
         computed: {
           isLogged() {
-            return this.$store.state.isLogged
+            // return this.$store.state.isLogged
+            if (localStorage.getItem('token')) {
+              return true;
+            }
           }
         },
     }

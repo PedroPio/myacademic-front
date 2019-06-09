@@ -1,13 +1,11 @@
 <template>
   <div class="login">
     <img src="../../../docs/assets/logo.jpeg" alt="Loading Icon">
-    <p v-if="loginError">{{ loginError }}</p>
-    <p v-if="loginSuccessful">Login Successful</p>
-    <form @submit.prevent="loginSubmit">
-      <input type="email" placeholder="E-Mail" v-model="email">
-      <input type="password" placeholder="Password" v-model="password">
-      <vs-button @click="login" color="green" type="filled">Entrar como professor</vs-button>
-    </form>
+    <p v-if="errors">{{ errors }}</p>
+
+    <input type="email" placeholder="E-Mail" v-model="credentials.username">
+    <input type="password" placeholder="Password" v-model="credentials.password">
+    <vs-button @click="login" color="green" type="filled">Entrar como professor</vs-button>
     
     <span>Ou</span>
     <hr>
@@ -17,6 +15,8 @@
 
 <script>
 
+import authApi from '../../api/authApi.js'
+
 export default {
    name: 'Login',
 
@@ -24,12 +24,28 @@ export default {
 
    },
 
+   data() {
+     return {
+      credentials: {
+        username: '',
+        password: ''
+      },
+      errors: ''
+     }
+   },
+
    methods: {
-       login() {
-           this.$router.push({ path: 'home' })
+       async login() {
+          const response = await authApi.login(this.credentials);
+          if (response.hasOwnProperty('token')){
+            localStorage.setItem('token', response.token);
+            this.$router.push({ path: 'home' });
+          }else{
+            this.errors = response;
+          }
            // faz o isLogged ir para True executando a action Login
            // se o usuario recarregar a pagina com Enter ou Ctrl F5, os valores da store se perdem
-           this.$store.dispatch('login')
+          //  this.$store.dispatch('login')
        },
 
        visitante() {

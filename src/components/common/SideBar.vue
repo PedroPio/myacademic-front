@@ -15,7 +15,7 @@
             <h4>
               Prof. Fulano
             </h4>
-            <vs-button color="danger" type="filled">Logout</vs-button>
+            <vs-button @click="logout" color="danger" type="filled">Logout</vs-button>
 
           </div>
           <div class="sidebar-body">
@@ -57,9 +57,16 @@
     <script>
     export default {
         name: 'SideBar',
-          data:()=>({
-                  active:false,
-                })
+        data:()=>({
+                active:false,
+              }),
+        methods: {
+          logout() {
+            localStorage.removeItem('token');
+            this.$router.push({ path: '/' });
+          }
+        },
+        
     }
 </script>
 
