@@ -9,13 +9,8 @@
                 </div>
             </vs-col>
             <vs-col vs-offset="2" v-tooltip="'col - 8'" vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
-                <vs-card>
-                    <vs-input v-model="disciplina.name" placeholder="Nome Disciplina"></vs-input>
-                    <vs-radio v-model="disciplina.type" vs-value="0">Graduação</vs-radio>
-                    <vs-radio v-model="disciplina.type" vs-value="1">Pós-graduação</vs-radio>
-                    <p v-if="message">{{ message }}</p>
-                    <vs-button @click="cadastrarDisciplina" color="green">Cadastrar</vs-button>
-                </vs-card>
+                <DisciplinasForm :disciplina="disciplina" :cadastrarDisciplina="cadastrarDisciplina" />
+                <p v-if="message">{{ message }}</p>
             </vs-col>
         </vs-row>
     </div>
@@ -24,6 +19,8 @@
 <script>
 import NavBar from '../common/NavBar.vue'
 import SubMenu from '../common/SubMenu.vue'
+import DisciplinasForm from './DisciplinasForm'
+
 import disciplinaApi from '../../api/disciplinaApi.js'
 
     export default {
@@ -32,6 +29,7 @@ import disciplinaApi from '../../api/disciplinaApi.js'
         components: {
             NavBar,
             SubMenu,
+            DisciplinasForm
         },
 
         data() {
@@ -46,8 +44,8 @@ import disciplinaApi from '../../api/disciplinaApi.js'
         },
 
         methods: {
-            async cadastrarDisciplina() {
-                const response = await disciplinaApi.cadastrarDisciplina(this.disciplina);
+            async cadastrarDisciplina(disciplina) {
+                const response = await disciplinaApi.cadastrarDisciplina(disciplina);
                 if (response.hasOwnProperty('name')) {
                     this.message = "Disiplina cadastrada com sucesso!";
                 } else {

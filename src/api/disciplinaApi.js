@@ -28,6 +28,23 @@ class disciplinaApi {
         })
     }
 
+    static removerDisciplina(disciplina_id){
+        const headers = this.requestHeaders();
+
+        const request = new Request(`${API_HOST}/api/v1/disciplina/${disciplina_id}`, {
+            method: 'DELETE',
+            headers: headers,
+        });
+
+        return fetch(request).then(response => {
+            if (!response.ok) {
+                return response.status;
+            }
+        }).catch(error => {
+            throw(error);
+        })
+    }
+
     static recuperarDisciplina(disciplina){
         const headers = this.requestHeaders();
 
