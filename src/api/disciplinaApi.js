@@ -45,7 +45,27 @@ class disciplinaApi {
         })
     }
 
-    static recuperarDisciplina(disciplina){
+    static editarDisciplina(disciplina, disciplina_id){
+        const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
+
+        const request = new Request(`${API_HOST}/api/v1/disciplina/${disciplina_id}/`, {
+            method: 'PUT',
+            headers: headers,
+            body: JSON.stringify(disciplina)
+        });
+
+        return fetch(request).then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return response.status;
+            }
+        }).catch(error => {
+            throw(error);
+        })
+    }
+
+    static recuperarDisciplina(){
         const headers = this.requestHeaders();
 
         const request = new Request(`${API_HOST}/api/v1/disciplina/`, {
