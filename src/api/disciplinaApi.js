@@ -5,7 +5,11 @@ const API_HOST = systemConstants.API_HOST;
 class disciplinaApi {
 
     static requestHeaders() {
-        return {'AUTHORIZATION': `Token ${localStorage.token}`}
+        if (localStorage.token) {
+            return {'AUTHORIZATION': `Token ${localStorage.token}`}
+        } else {
+            return {}
+        }
     }
 
     static cadastrarDisciplina(disciplina){
