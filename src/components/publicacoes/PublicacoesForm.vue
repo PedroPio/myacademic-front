@@ -9,7 +9,7 @@
             <label>File
                 <input type="file" @change="handleFileUpload">
             </label>
-            <a v-bind:href="publicacao.bibtex">Arquivo Atual</a>
+            <a v-if="publicacao.bibtex" v-bind:href="publicacao.bibtex">Arquivo Atual</a>
             <vs-button v-if="edit" @click="editarPublicacao(publicacao, publicacao.id)" color="green">Editar</vs-button>
             <vs-button v-else @click="cadastrarPublicacao(publicacao)" color="green">Cadastrar</vs-button>
         </vs-card>
