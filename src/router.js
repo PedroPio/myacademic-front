@@ -10,9 +10,10 @@ import DisciplinasAdd from './components/disciplinas/DisciplinasAdd.vue'
 
 import GruposDePesquisa from './components/gruposDePesquisa/GruposDePesquisa.vue'
 
-import Projetos from './components/projetos/Projetos'
+import Projetos from './components/projetos/Projetos.vue'
+import ProjetosAdd from './components/projetos/ProjetosAdd.vue'
 
-import Publicacoes from './components/publicacoes/Publicacoes'
+import Publicacoes from './components/publicacoes/Publicacoes.vue'
 import PublicacoesAdd from './components/publicacoes/PublicacoesAdd.vue'
 
 Vue.use(Router)
@@ -23,6 +24,7 @@ export default new Router({
   routes: [
     { path: '/', component: Login },
     { path: '/home', component: Home },
+    
     { path: '/alunos', component: Alunos },
 
     { path: '/disciplinas', component: Disciplinas },
@@ -31,6 +33,7 @@ export default new Router({
     { path: '/grupos-de-pesquisa', component: GruposDePesquisa },
 
     { path: '/projetos', component: Projetos },
+    { path: '/projetos/new', component: ProjetosAdd },
 
     { path: '/publicacoes', component: Publicacoes },
     { path: '/publicacoes/new', component: PublicacoesAdd},
