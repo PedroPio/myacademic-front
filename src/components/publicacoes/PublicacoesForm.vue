@@ -3,8 +3,9 @@
         <p v-if="edit">Editar Publicação</p>
         <vs-card>
             <vs-input v-model="publicacao.name" placeholder="Nome Publicacao"></vs-input>
-            <vs-radio v-model="publicacao.type" vs-value="0">Graduação</vs-radio>
-            <vs-radio v-model="publicacao.type" vs-value="1">Pós-graduação</vs-radio>
+            <vs-radio v-model="publicacao.type" vs-value="0">Conferência</vs-radio>
+            <vs-radio v-model="publicacao.type" vs-value="1">Periódico</vs-radio>
+            <vs-radio v-model="publicacao.type" vs-value="2">Resumo</vs-radio>
             <label>File
                 <input type="file" @change="handleFileUpload">
             </label>
