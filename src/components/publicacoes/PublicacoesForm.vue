@@ -5,9 +5,10 @@
             <vs-input v-model="publicacao.name" placeholder="Nome Publicacao"></vs-input>
             <vs-radio v-model="publicacao.type" vs-value="0">Graduação</vs-radio>
             <vs-radio v-model="publicacao.type" vs-value="1">Pós-graduação</vs-radio>
-            <label>File {{publicacao.bibtex}}
+            <label>File
                 <input type="file" @change="handleFileUpload">
             </label>
+            <a v-bind:href="publicacao.bibtex">Arquivo Atual</a>
             <vs-button v-if="edit" @click="editarPublicacao(publicacao, publicacao.id)" color="green">Editar</vs-button>
             <vs-button v-else @click="cadastrarPublicacao(publicacao)" color="green">Cadastrar</vs-button>
         </vs-card>

@@ -10,7 +10,7 @@
               <p v-if="message">{{ message }}</p>
               <vs-list-item :title="publicacao.name">
                 <vs-button v-show="isLogged" color="primary" icon="edit" @click="editar(index)"></vs-button>
-                <vs-button v-show="isLogged" color="danger" icon="delete" @click="removerPublicacao(publicacao.pk, index)"></vs-button>
+                <vs-button v-show="isLogged" color="danger" icon="delete" @click="removerPublicacao(publicacao.id, index)"></vs-button>
               </vs-list-item>
           </vs-list>
         </div>
