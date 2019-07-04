@@ -9,6 +9,7 @@ import Disciplinas from './components/disciplinas/Disciplinas.vue'
 import DisciplinasAdd from './components/disciplinas/DisciplinasAdd.vue'
 
 import GruposDePesquisa from './components/gruposDePesquisa/GruposDePesquisa.vue'
+import GruposDePesquisaAdd from './components/gruposDePesquisa/GruposDePesquisaAdd.vue'
 
 import Projetos from './components/projetos/Projetos.vue'
 import ProjetosAdd from './components/projetos/ProjetosAdd.vue'
@@ -31,6 +32,7 @@ export default new Router({
     { path: '/disciplinas/new', component: DisciplinasAdd },
 
     { path: '/grupos-de-pesquisa', component: GruposDePesquisa },
+    { path: '/grupos-de-pesquisa/new', component: GruposDePesquisaAdd},
 
     { path: '/projetos', component: Projetos },
     { path: '/projetos/new', component: ProjetosAdd },

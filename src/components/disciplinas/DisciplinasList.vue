@@ -3,6 +3,7 @@
     <div>
         <div v-if="edit">
           <DisciplinasForm :edit="edit" :disciplina="disciplinas[index]" :editarDisciplina="editarDisciplina"/>
+          <vs-button color="gray" @click="voltar()">Voltar</vs-button>
           <p v-if="message">{{ message }}</p>
         </div>
         <div v-else>
@@ -50,6 +51,12 @@ import DisciplinasForm from './DisciplinasForm'
             editar(index) {
               this.edit = true;
               this.index = index;
+              this.message = '';
+            },
+
+            voltar() {
+              this.edit = false;
+              this.message = '';
             },
 
             async removerDisciplina(disciplina_id, index) {

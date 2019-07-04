@@ -4,13 +4,13 @@
         <SubMenu />
         <vs-row>
             <vs-col vs-offset="2" v-tooltip="'col - 8'" vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
-                <vs-button @click="() => this.$router.push({ path: '/publicacoes' })" color="gray">Voltar</vs-button>
+                <vs-button @click="() => this.$router.push({ path: '/grupos-de-pesquisa' })" color="gray">Voltar</vs-button>
                 <div class="container text-left mt-4 mb-2">
-                    <h1>Nova Publicação</h1>
+                    <h1>Novo Grupo de Pesquisa</h1>
                 </div>
             </vs-col>
             <vs-col vs-offset="2" v-tooltip="'col - 8'" vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
-                <PublicacoesForm :publicacao="publicacao" :cadastrarPublicacao="cadastrarPublicacao" @fileUpload="fileUploadChild" />
+                <GruposDePesquisaForm :grupo_de_pesquisa="grupo_de_pesquisa" :cadastrarGrupoDePesquisa="cadastrarGrupoDePesquisa" />
                 <p v-if="message">{{ message }}</p>
             </vs-col>
         </vs-row>
@@ -20,25 +20,23 @@
 <script>
 import NavBar from '../common/NavBar.vue'
 import SubMenu from '../common/SubMenu.vue'
-import PublicacoesForm from './PublicacoesForm'
+import GruposDePesquisaForm from './GruposDePesquisaForm'
 
-import publicacaoApi from '../../api/publicacaoApi.js'
+import grupoDePesquisaApi from '../../api/grupoDePesquisaApi.js'
 
     export default {
-        name: 'PublicacoesAdd',
+        name: 'GruposDePesquisaAdd',
 
         components: {
             NavBar,
             SubMenu,
-            PublicacoesForm
+            GruposDePesquisaForm
         },
 
         data() {
             return {
-                publicacao: {
-                    type: '',
-                    name: '',
-                    bibtex: ''
+                grupo_de_pesquisa: {
+                    name: ''
                 },
 
                 message: '',
@@ -46,19 +44,14 @@ import publicacaoApi from '../../api/publicacaoApi.js'
         },
 
         methods: {
-            async cadastrarPublicacao(publicacao) {
-                const response = await publicacaoApi.cadastrarPublicacao(publicacao);
+            async cadastrarGrupoDePesquisa(grupo_de_pesquisa) {
+                const response = await grupoDePesquisaApi.cadastrarGrupoDePesquisa(grupo_de_pesquisa);
                 if (response.hasOwnProperty('name')) {
-                    this.message = "Publicação cadastrada com sucesso!";
+                    this.message = "Grupo de pesquisa cadastrado com sucesso!";
                 } else {
                     this.message = "Preencha os campos corretamente!";
                 }
-            },
-
-            fileUploadChild(file) {
-              this.publicacao.bibtex = file;
             }
-
         },
     }
 </script>

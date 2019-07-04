@@ -3,6 +3,7 @@
     <div>
         <div v-if="edit">
           <PublicacoesForm :edit="edit" :publicacao="publicacoes[index]" :editarPublicacao="editarPublicacao" @fileUpload="fileUploadChild" />
+          <vs-button color="gray" @click="voltar()">Voltar</vs-button>
           <p v-if="message">{{ message }}</p>
         </div>
         <div v-else>
@@ -12,6 +13,7 @@
                 <vs-button v-show="isLogged" color="primary" icon="edit" @click="editar(index)"></vs-button>
                 <vs-button v-show="isLogged" color="danger" icon="delete" @click="removerPublicacao(publicacao.id, index)"></vs-button>
               </vs-list-item>
+              <img :src="publicacao.bibtex" />
           </vs-list>
         </div>
     </div>
@@ -51,6 +53,12 @@ import PublicacoesForm from './PublicacoesForm'
             editar(index) {
               this.edit = true;
               this.index = index;
+              this.message = '';
+            },
+
+            voltar() {
+              this.edit = false;
+              this.message = '';
             },
 
             async removerPublicacao(publicacao_id, index) {

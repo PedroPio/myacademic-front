@@ -8,6 +8,7 @@
                     <h1>Grupos de Pesquisa</h1>
                 </div>
             </vs-col>
+            <vs-button @click="() => this.$router.push({ path: '/grupos-de-pesquisa/new' })" color="purple" type="filled">Adicionar</vs-button>
             <vs-col vs-offset="2" v-tooltip="'col - 8'" vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
                 <vs-card>
                     <GruposDePesquisaList />

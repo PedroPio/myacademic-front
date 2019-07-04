@@ -2,6 +2,7 @@
     <div>
         <div v-if="edit">
           <ProjetosForm :edit="edit" :projeto="projetos[index]" :editarProjeto="editarProjeto" @fileUpload="fileUploadChild" />
+          <vs-button color="gray" @click="voltar()">Voltar</vs-button>
           <p v-if="message">{{ message }}</p>
         </div>
         <div v-else>
@@ -11,6 +12,7 @@
                 <vs-button v-show="isLogged" color="primary" icon="edit" @click="editar(index)"></vs-button>
                 <vs-button v-show="isLogged" color="danger" icon="delete" @click="removerProjeto(projeto.id, index)"></vs-button>
               </vs-list-item>
+              <p> {{ projeto.abstract }} </p>
           </vs-list>
         </div>
     </div>
@@ -51,6 +53,12 @@ import ProjetosForm from './ProjetosForm'
             editar(index) {
               this.edit = true;
               this.index = index;
+              this.message = '';
+            },
+
+            voltar() {
+              this.edit = false;
+              this.message = '';
             },
 
             async removerProjeto(projeto_id, index) {

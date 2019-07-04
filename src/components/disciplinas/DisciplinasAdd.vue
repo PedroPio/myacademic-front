@@ -4,6 +4,7 @@
         <SubMenu />
         <vs-row>
             <vs-col vs-offset="2" v-tooltip="'col - 8'" vs-type="flex" vs-justify="center" vs-align="center" vs-w="8">
+                <vs-button @click="() => this.$router.push({ path: '/disciplinas' })" color="gray">Voltar</vs-button>
                 <div class="container text-left mt-4 mb-2">
                     <h1>Nova Disciplina</h1>
                 </div>
