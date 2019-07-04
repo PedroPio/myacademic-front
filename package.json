@@ -8,8 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.20",
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "material-icons": "^0.3.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6",
+    "vuesax": "^3.8.65",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
