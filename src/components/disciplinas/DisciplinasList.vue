@@ -9,7 +9,7 @@
         <div v-else>
           <vs-list v-for="(disciplina, index) in disciplinas">
               <p v-if="message">{{ message }}</p>
-              <vs-list-item :title="disciplina.name">
+              <vs-list-item :title="disciplina.type == 0 ? disciplina.name + ' - ' + 'Graduação' : disciplina.name + ' - ' + 'Pós-Graduação'">
                 <vs-button v-show="isLogged" color="primary" icon="edit" @click="editar(index)"></vs-button>
                 <vs-button v-show="isLogged" color="danger" icon="delete" @click="removerDisciplina(disciplina.pk, index)"></vs-button>
               </vs-list-item>
